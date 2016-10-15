@@ -1,0 +1,25 @@
+{
+  "name": "nenwchan",
+  "authors": [
+    "HelloWorld017 <deu07115@gmail.com>"
+  ],
+  "description": "The new version of khinenw.tk",
+  "main": "src/index.js",
+  "license": "MIT",
+  "homepage": "https://github.com/HelloWorld017/nenwchan",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "NanumBarunGothic": "^1.0.0",
+    "font-d2coding": "Joungkyun/font-d2coding",
+    "semantic": "^2.2.4",
+    "jquery": "^3.1.1",
+    "parallax.js": "^1.4.2",
+    "mdi": "^1.7.22"
+  }
+}

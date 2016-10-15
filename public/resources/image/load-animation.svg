@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<svg width="640" height="256" viewBox="0 0 640 256" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<style><![CDATA[
+		@keyframes outerShrink {
+			from {
+				r: 64;
+			}
+
+			to {
+				r: 16;
+			}
+		}
+
+		@keyframes innerShrink {
+			from {
+				r: 32;
+			}
+
+			to {
+				r: 0;
+			}
+		}
+
+		@keyframes maskExpand {
+			from {
+				r: 18;
+			}
+
+			to {
+				r: 32;
+			}
+		}
+
+		.circle-outer {
+			animation: outerShrink 200ms ease-out 0ms 1 normal forwards;
+		}
+
+		.circle-inner {
+			animation: innerShrink 200ms ease-out 0ms 1 normal forwards;
+			fill: #fff !important;
+		}
+
+		.mask>circle {
+			animation: maskExpand 200ms ease-in 100ms 1 normal forwards;
+		}
+
+		.line-outer {
+			stroke-width: 2;
+		}
+
+		.line-connection {
+			stroke-width: 2;
+			stroke-dasharray: 6;
+		}
+
+		.first-item {
+			fill: #f44336;
+			stroke: #f44336;
+			animation-delay: 0ms;
+		}
+
+		.first-mask>circle {
+			animation-delay: 100ms;
+		}
+
+		.second-item {
+			fill: #ffc107;
+			stroke: #ffc107;
+			animation-delay: 200ms;
+		}
+
+		.second-mask>circle {
+			animation-delay: 300ms;
+		}
+
+		.third-item {
+			fill: #76ff03;
+			stroke: #76ff03;
+			animation-delay: 400ms;
+		}
+
+		.third-mask>circle {
+			animation-delay: 500ms;
+		}
+
+		.fourth-item {
+			fill: #009688;
+			stroke: #009688;
+			animation-delay: 600ms;
+		}
+
+		.fourth-mask>circle {
+			animation-delay: 700ms;
+		}
+
+		.fifth-item {
+			fill: #2196f3;
+			stroke: #2196f3;
+			animation-delay: 800ms;
+		}
+
+		.fifth-mask>circle {
+			animation-delay: 900ms;
+		}
+	]]></style>
+
+	<defs>
+		<mask id="mask-1" class="mask first-mask">
+			<circle cx="64" cy="192" r="18" fill="#fff"/>
+		</mask>
+
+		<mask id="mask-2" class="mask second-mask">
+			<circle cx="192" cy="64" r="18" fill="#fff"/>
+		</mask>
+
+		<mask id="mask-3" class="mask third-mask">
+			<circle cx="320" cy="192" r="18" fill="#fff"/>
+		</mask>
+
+		<mask id="mask-4" class="mask fourth-mask">
+			<circle cx="448" cy="64" r="18" fill="#fff"/>
+		</mask>
+
+		<mask id="mask-5" class="mask fifth-mask">
+			<circle cx="576" cy="192" r="18" fill="#fff"/>
+		</mask>
+	</defs>
+
+	<!-- first -->
+	<circle cx="64" cy="192" r="64" class="circle-outer first-item"/>
+	<circle cx="64" cy="192" r="32" class="circle-inner first-item"/>
+
+	<g class="line-outer-group" mask="url(#mask-1)">
+		<line x1="82" y1="192" x2="96" y2="192" class="line-outer first-item"/>
+		<line x1="80" y1="201" x2="92" y2="208" class="line-outer first-item"/>
+		<line x1="73" y1="208" x2="80" y2="220" class="line-outer first-item"/>
+		<line x1="64" y1="210" x2="64" y2="224" class="line-outer first-item"/>
+		<line x1="55" y1="208" x2="48" y2="220" class="line-outer first-item"/>
+		<line x1="48" y1="201" x2="36" y2="208" class="line-outer first-item"/>
+		<line x1="46" y1="192" x2="32" y2="192" class="line-outer first-item"/>
+		<line x1="48" y1="183" x2="36" y2="176" class="line-outer first-item"/>
+		<line x1="55" y1="176" x2="48" y2="164" class="line-outer first-item"/>
+		<line x1="64" y1="174" x2="64" y2="160" class="line-outer first-item"/>
+		<line x1="73" y1="176" x2="80" y2="164" class="line-outer first-item"/>
+		<line x1="80" y1="183" x2="92" y2="176" class="line-outer first-item"/>
+	</g>
+
+	<line class="line-connection first-item" x1="96" y1="160" x2="96" y2="160">
+		<!-- SMIL is deprecated but there are no x2, y2 properties in css. -->
+		<animate attributeName="x2" dur="200ms" begin="0ms" to="160" fill="freeze"/>
+		<animate attributeName="y2" dur="200ms" begin="0ms" to="96" fill="freeze"/>
+	</line>
+
+	<!-- second -->
+	<circle cx="192" cy="64" r="64" class="circle-outer second-item"/>
+	<circle cx="192" cy="64" r="32" class="circle-inner second-item"/>
+
+	<g class="line-outer-group" mask="url(#mask-2)">
+		<line x1="210" y1="64" x2="224" y2="64" class="line-outer second-item"/>
+		<line x1="208" y1="73" x2="220" y2="80" class="line-outer second-item"/>
+		<line x1="201" y1="80" x2="208" y2="92" class="line-outer second-item"/>
+		<line x1="192" y1="82" x2="192" y2="96" class="line-outer second-item"/>
+		<line x1="183" y1="80" x2="176" y2="92" class="line-outer second-item"/>
+		<line x1="176" y1="73" x2="164" y2="80" class="line-outer second-item"/>
+		<line x1="174" y1="64" x2="160" y2="64" class="line-outer second-item"/>
+		<line x1="176" y1="55" x2="164" y2="48" class="line-outer second-item"/>
+		<line x1="183" y1="48" x2="176" y2="36" class="line-outer second-item"/>
+		<line x1="192" y1="46" x2="192" y2="32" class="line-outer second-item"/>
+		<line x1="201" y1="48" x2="208" y2="36" class="line-outer second-item"/>
+		<line x1="208" y1="55" x2="220" y2="48" class="line-outer second-item"/>
+	</g>
+
+	<line class="line-connection second-item" x1="224" y1="96" x2="224" y2="96">
+		<animate attributeName="x2" dur="200ms" begin="200ms" to="288" fill="freeze"/>
+		<animate attributeName="y2" dur="200ms" begin="200ms" to="160" fill="freeze"/>
+	</line>
+
+	<!-- third -->
+	<circle cx="320" cy="192" r="64" class="circle-outer third-item"/>
+	<circle cx="320" cy="192" r="32" class="circle-inner third-item"/>
+
+	<g class="line-outer-group" mask="url(#mask-3)">
+		<line x1="338" y1="192" x2="352" y2="192" class="line-outer third-item"/>
+		<line x1="336" y1="201" x2="348" y2="208" class="line-outer third-item"/>
+		<line x1="329" y1="208" x2="336" y2="220" class="line-outer third-item"/>
+		<line x1="320" y1="210" x2="320" y2="224" class="line-outer third-item"/>
+		<line x1="311" y1="208" x2="304" y2="220" class="line-outer third-item"/>
+		<line x1="304" y1="201" x2="292" y2="208" class="line-outer third-item"/>
+		<line x1="302" y1="192" x2="288" y2="192" class="line-outer third-item"/>
+		<line x1="304" y1="183" x2="292" y2="176" class="line-outer third-item"/>
+		<line x1="311" y1="176" x2="304" y2="164" class="line-outer third-item"/>
+		<line x1="320" y1="174" x2="320" y2="160" class="line-outer third-item"/>
+		<line x1="329" y1="176" x2="336" y2="164" class="line-outer third-item"/>
+		<line x1="336" y1="183" x2="348" y2="176" class="line-outer third-item"/>
+	</g>
+
+	<line class="line-connection third-item" x1="352" y1="160" x2="352" y2="160">
+		<animate attributeName="x2" dur="400ms" begin="200ms" to="416" fill="freeze"/>
+		<animate attributeName="y2" dur="400ms" begin="200ms" to="96" fill="freeze"/>
+	</line>
+
+	<!-- fourth -->
+	<circle cx="448" cy="64" r="64" class="circle-outer fourth-item"/>
+	<circle cx="448" cy="64" r="32" class="circle-inner fourth-item"/>
+
+	<g class="line-outer-group" mask="url(#mask-4)">
+		<line x1="466" y1="64" x2="480" y2="64" class="line-outer fourth-item"/>
+		<line x1="464" y1="73" x2="476" y2="80" class="line-outer fourth-item"/>
+		<line x1="457" y1="80" x2="464" y2="92" class="line-outer fourth-item"/>
+		<line x1="448" y1="82" x2="448" y2="96" class="line-outer fourth-item"/>
+		<line x1="439" y1="80" x2="432" y2="92" class="line-outer fourth-item"/>
+		<line x1="432" y1="73" x2="420" y2="80" class="line-outer fourth-item"/>
+		<line x1="430" y1="64" x2="416" y2="64" class="line-outer fourth-item"/>
+		<line x1="432" y1="55" x2="420" y2="48" class="line-outer fourth-item"/>
+		<line x1="439" y1="48" x2="432" y2="36" class="line-outer fourth-item"/>
+		<line x1="448" y1="46" x2="448" y2="32" class="line-outer fourth-item"/>
+		<line x1="457" y1="48" x2="464" y2="36" class="line-outer fourth-item"/>
+		<line x1="464" y1="55" x2="476" y2="48" class="line-outer fourth-item"/>
+	</g>
+
+	<line class="line-connection fourth-item" x1="480" y1="96" x2="480" y2="96">
+		<animate attributeName="x2" dur="600ms" begin="200ms" to="544" fill="freeze"/>
+		<animate attributeName="y2" dur="600ms" begin="200ms" to="160" fill="freeze"/>
+	</line>
+
+	<!-- fifth -->
+	<circle cx="576" cy="192" r="64" class="circle-outer fifth-item"/>
+	<circle cx="576" cy="192" r="32" class="circle-inner fifth-item"/>
+
+	<g class="line-outer-group" mask="url(#mask-5)">
+		<line x1="594" y1="192" x2="608" y2="192" class="line-outer fifth-item"/>
+		<line x1="592" y1="201" x2="604" y2="208" class="line-outer fifth-item"/>
+		<line x1="585" y1="208" x2="592" y2="220" class="line-outer fifth-item"/>
+		<line x1="576" y1="210" x2="576" y2="224" class="line-outer fifth-item"/>
+		<line x1="567" y1="208" x2="560" y2="220" class="line-outer fifth-item"/>
+		<line x1="560" y1="201" x2="548" y2="208" class="line-outer fifth-item"/>
+		<line x1="558" y1="192" x2="544" y2="192" class="line-outer fifth-item"/>
+		<line x1="560" y1="183" x2="548" y2="176" class="line-outer fifth-item"/>
+		<line x1="567" y1="176" x2="560" y2="164" class="line-outer fifth-item"/>
+		<line x1="576" y1="174" x2="576" y2="160" class="line-outer fifth-item"/>
+		<line x1="585" y1="176" x2="592" y2="164" class="line-outer fifth-item"/>
+		<line x1="592" y1="183" x2="604" y2="176" class="line-outer fifth-item"/>
+	</g>
+</svg>
