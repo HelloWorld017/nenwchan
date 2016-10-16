@@ -2,6 +2,10 @@
 	font-family: 'Spoqa Han Sans JP', 'Nanum Barun Gothic', sans-serif;
 }
 
+a {
+	color: #f1f1f1;
+}
+
 aside {
 	background: #333;
 	position: fixed;
@@ -11,11 +15,43 @@ aside {
 	left: 0;
 }
 
-aside>h1 {
-	color: #fff;
+aside>a>h1 {
+	color: #f1f1f1;
 	width: 100%;
-	margin-top: 50px;
+	padding: 25px 0;
+	margin: 0;
 	text-align: center;
+}
+
+aside>a>h1:hover {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+aside * {
+	text-decoration: none;
+	color: #f1f1f1;
+}
+
+nav h3 {
+	margin: 5px 0;
+	padding: 5px 20px;
+	border-top: 1px solid #444;
+	font-weight: 300;
+}
+
+nav a[data-href] {
+	display: block;
+	padding-left: 20px;
+	color: #aaa;
+	font-weight: 100;
+}
+
+nav a:hover {
+	color: #f1f1f1 !important;
+}
+
+nav h3:hover {
+	background-color: rgba(255, 255, 255, 0.3);
 }
 
 main {
@@ -30,6 +66,25 @@ main {
 
 section {
 	position: relative;
+}
+
+footer .highlight {
+	padding: 20px 0;
+	background: #009688;
+}
+
+footer .darken {
+	padding: 10px 0;
+	background: #00897b;
+}
+
+footer h1, footer h3 {
+	color: #f1f1f1 !important;
+	margin: 0;
+}
+
+footer .content-container {
+	 color: #f1f1f1;
 }
 
 .main-section {
@@ -55,7 +110,7 @@ section {
 }
 
 .header-title, .header-desc {
-	color: #fff;
+	color: #f1f1f1;
 	text-align: center;
 }
 
@@ -64,8 +119,13 @@ section {
 	bottom: 10px;
 	width: 100%;
 	text-align: center;
-	color: #fff;
+	color: #f1f1f1;
 	font-size: 4rem;
+}
+
+.content-section {
+	background: #222;
+	padding: 10px;
 }
 
 .content-header {
@@ -86,22 +146,22 @@ section {
 .content-header h1 {
 	display: table-cell;
 	vertical-align: middle;
-	color: #fff;
+	color: #f1f1f1;
 	font-size: 2rem;
 	width: 100%;
 	margin: 0;
 	padding: 0;
 }
 
-.content-section {
-	background: #222;
-	padding: 10px;
+.content-container {
+	max-width: 768px;
+	margin: 0 auto;
 }
 
 .sh {
 	font-family: 'D2 Coding', monospace !important;
 	background: #303030;
-	color: #FFFFFF;
+	color: #f1f1f1;
 	max-width: 750px;
 	margin: 15px;
 }
@@ -119,6 +179,26 @@ section {
 
 .sh-str {
 	color: #00FF80;
+}
+
+.right-text {
+	float: right;
+}
+
+.bold-text {
+	font-weight: bold;
+}
+
+.unbold-text {
+	font-weight: 100;
+}
+
+.striken-text {
+	text-decoration: line-through;
+}
+
+.no-decoration {
+	text-decoration: none;
 }
 
 @media (max-width: 768px) {
