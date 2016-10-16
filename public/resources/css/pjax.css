@@ -5,6 +5,7 @@
 	left: 0;
 	background: rgba(0, 0, 0, 0.3);
 	display: table;
+	position: fixed;
 }
 
 #ajax-cover {

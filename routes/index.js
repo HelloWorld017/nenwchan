@@ -1,39 +1,45 @@
+const path = require('path');
 const router = require('express').Router();
 
 router.get('/', (req, res, next) => {
-	res.render('frame', {
-		name: 'index'
-	});
-});
+	/*if(req.header('X-PJAX')){
+		return res.render('index');
+	}*/
 
-router.get('/pjax', (req, res, next) => {
-	res.render('index', {}, (err, html) => {
-
-	});
+	setTimeout(() => {
+		res.render('frame', {
+			name: 'index'
+		});
+	}, 5000);
 });
 
 router.get('/gallery', (req, res, next) => {
-	res.render('frame', {
-		name: 'gallery'
-	});
-});
-
-router.get('/gallery/pjax', (req, res, next) => {
-	res.render('gallery', {}, (err, html) => {
-
-	});
+	/*if(req.header('X-PJAX')){
+		return res.render('gallery');
+	}*/
+	setTimeout(() => {
+		res.render('frame', {
+			name: 'gallery'
+		});
+	}, 5000);
 });
 
 router.get('/service', (req, res, next) => {
+	/*if(req.header('X-PJAX')){
+		return res.render('service');
+	}*/
+
 	res.render('frame', {
 		name: 'service'
 	});
 });
 
-router.get('/service/pjax', (req, res, next) => {
-	res.render('service', {}, (err, html) => {
-
-	});
+router.get('/loading', (req, res, next) => {
+	res
+		.status(200)
+		.type('image/svg+xml')
+		.header('Cache-Control', 'no-cache')
+		.sendFile(path.resolve('./public/resources/image/load-animation.svg'));
 });
 
 module.exports = router;
