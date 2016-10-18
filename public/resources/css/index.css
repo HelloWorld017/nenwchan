@@ -201,6 +201,58 @@ footer .content-container {
 	text-decoration: none;
 }
 
+.decorated-text-wrapper {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.decorated-text {
+	position: relative;
+	display: inline-block;
+	width: 386px;
+	height: 20px;
+	text-decoration: none;
+}
+
+.decorated-text::before {
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	content: '';
+	width: 5px;
+	height: 40px;
+	background: rgba(255, 255, 255, 0.3);
+	transform-origin: 0 0;
+	transition: transform 500ms, left 500ms, top 500ms, background 250ms;
+	will-change: transform, top, left, background;
+}
+
+.decorated-text:hover::before {
+	transform: rotate(90deg);
+	top: 25px;
+	left: 213px;
+	background: #fff;
+}
+
+.decorated-text:hover::after {
+	transform: rotate(90deg);
+	top: -30px;
+	right: 193px;
+	background: #fff;
+}
+
+.decorated-text::after {
+	position: absolute;
+	right: -10px;
+	top: -10px;
+	content: '';
+	width: 5px;
+	height: 40px;
+	background: rgba(255, 255, 255, 0.3);
+	transition: transform 500ms, top 500ms, right 500ms, background 250ms;
+	will-change: transform, top, right, background;
+}
+
 @media (max-width: 768px) {
 	aside {
 		left: -20vw;

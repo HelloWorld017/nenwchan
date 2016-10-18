@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
 		res.render('frame', {
 			name: 'index'
 		});
-	}, 5000);
+	}, 500);
 });
 
 router.get('/gallery', (req, res, next) => {
@@ -21,7 +21,7 @@ router.get('/gallery', (req, res, next) => {
 		res.render('frame', {
 			name: 'gallery'
 		});
-	}, 5000);
+	}, 500);
 });
 
 router.get('/service', (req, res, next) => {
@@ -29,9 +29,11 @@ router.get('/service', (req, res, next) => {
 		return res.render('service');
 	}*/
 
-	res.render('frame', {
-		name: 'service'
-	});
+	setTimeout(() => {
+		res.render('frame', {
+			name: 'service'
+		});
+	}, 500);
 });
 
 router.get('/loading', (req, res, next) => {
