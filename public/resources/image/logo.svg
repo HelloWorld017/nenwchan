@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<mask id="mask1">
+			<rect x="0" y="0" width="1024" height="780" fill="#fff"/>
+		</mask>
+
+		<mask id="mask2">
+			<rect x="448" y="381" width="1024" height="1024" fill="#fff"/>
+		</mask>
+	</defs>
+	<rect x="0" y="0" width="1024" height="1024" fill="#00c0a0"/>
+	<polygon points="256,64 384,245 384,960 256,779" fill="#fff"/>
+	<polygon points="256,664 256,845 704,344 768,99" fill="#fff" mask="url(#mask1)"/>
+	<polygon points="512,560 512,375 724,622 788,867" mask="url(#mask2)" fill="#fff"/>
+</svg>

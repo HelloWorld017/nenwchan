@@ -134,15 +134,6 @@ footer .content-container {
 	height: 100px;
 }
 
-.content-section:nth-child(2)>.content-header {
-	background: url(/resources/image/tripattern.png);
-	background-size-x: 160px;
-	background-size-y: 100px;
-	background-repeat: no-repeat;
-	background-position-x: -200px;
-	background-position-y: -300px;
-}
-
 .content-header h1 {
 	display: table-cell;
 	vertical-align: middle;
@@ -153,9 +144,32 @@ footer .content-container {
 	padding: 0;
 }
 
+.content-section:nth-child(2):not(.no-background)>.content-header {
+	background: url(/resources/image/tripattern.png);
+	background-size-x: 160px;
+	background-size-y: 100px;
+	background-repeat: no-repeat;
+	background-position-x: -200px;
+	background-position-y: -300px;
+}
+
+.content-header.centered {
+	text-align: center;
+	padding: 50px 0;
+}
+
+.content-header.centered h1 {
+	font-size: 4rem;
+}
+
 .content-container {
 	max-width: 768px;
 	margin: 0 auto;
+}
+
+.no-background {
+	background: initial;
+	background-color: transparent;
 }
 
 .sh {

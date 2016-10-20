@@ -3,17 +3,17 @@
 	var main = $('main');
 	$(document).ready(function(){
 		$('.main-section').parallax({
-			imageSrc: './resources/image/parallax.jpg',
+			imageSrc: './resources/image/parallax-gallery.png',
 			naturalWidth: 3840,
-			naturalHeight: 2400,
+			naturalHeight: 2769,
 			speed: 0.1
 		});
 		clearList.push('.main-section');
 
-		$('.parallax-section').parallax({
-			imageSrc: './resources/image/parallax2.png',
-			naturalWidth: 4266,
-			naturalHeight: 2049,
+		$('#math').parallax({
+			imageSrc: './resources/image/parallax-math.png',
+			naturalWidth: 1440,
+			naturalHeight: 760,
 			speed: 0.1
 		});
 		clearList.push('.parallax-section');
@@ -28,14 +28,6 @@
 			}, 300);
 			return false;
 		});
-
-		$('.section-scroll').click(function(e){
-			main.animate({
-				scrollTop: window.innerHeight
-			}, 300);
-
-			return false;
-		});
 	});
 
 	$(document).on('turbolinks:before-cache', function(){
@@ -43,7 +35,6 @@
 			$(v).parallax('destroy');
 		});
 
-		$('.section-scroll').off('click');
 		$('a[data-href]').off('click');
 		$('main').off('scroll');
 		$(document).off('turbolinks:before-cache');

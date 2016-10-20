@@ -18,32 +18,23 @@
 		</header>
 	</section>
 
-	<section class="content-section">
-		<header class="content-header">
-			<h1>Summary</h1>
+	<section id="math" class="no-background content-section">
+		<header class="centered content-header">
+			<h1><i class="mdi mdi-vector-triangle"></i></h1>
 		</header>
 		<%
-			['Triangle 1', 'Triangle 2', 'Triangle 3', 'Circles', 'Pixels', 'Lines', [
-				'DiagonalPattern',
-				'Diagonal Pattern'
-			], [
-				'SquarePattern',
-				'Square Pattern'
-			], [
-				'TrianglePattern',
-				'Triangle Pattern'
-			], [
+			[[
+				'Triangles',
+				'Triangles 1'
+			], 'Triangles 2', 'Triangles 3', 'Circles', 'Pixels', 'Lines', 'Diagonal Pattern', 'Square Pattern', 'Triangle Pattern', [
 				'DragonCurve',
 				'Dragon Curve (WIP)'
-			], [
-				'BinaryClock',
-				'Binary Clock'
-			]].forEach((v) => { %>
+			], 'Binary Clock'].forEach((v) => { %>
 				<div class="decorated-text-wrapper">
 				<% if(typeof v === 'string'){ %>
-					<a href="/play/<%- v %>.html" class="decorated-text"><%- v %></a>
+					<a href="/play/<%- v.replace(' ', '') %>.html" class="decorated-text"  data-turbolinks="false"><%- v %></a>
 				<% }else{ %>
-					<a href="/play/<%- v[0] %>.html" class="decorated-text"><%- v[1] %></a>
+					<a href="/play/<%- v[0] %>.html" class="decorated-text"  data-turbolinks="false"><%- v[1] %></a>
 				<% } %>
 				</div>
 			<% }); %>
@@ -71,3 +62,5 @@
 		</div>
 	</footer>
 </main>
+
+<script src="/resources/js/gallery.js"></script>
