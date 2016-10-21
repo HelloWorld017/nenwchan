@@ -3,17 +3,15 @@
 	var main = $('main');
 	$(document).ready(function(){
 		$('.main-section').parallax({
-			imageSrc: './resources/image/parallax-gallery.png',
-			speed: 0.1
+			imageSrc: './resources/image/parallax-service.jpg',
+			naturalWidth: 3840,
+			naturalHeight: 2769
 		});
 		clearList.push('.main-section');
 
-		['math', 'korean', 'art', 'progress'].forEach(function(v){
+		['web', 'telegram', 'deprecated'].forEach(function(v, k){
 			$('#' + v).parallax({
-				imageSrc: './resources/image/parallax-' + v +'.png',
-				naturalWidth: 1440,
-				naturalHeight: 760,
-				speed: 0.1
+				imageSrc: './resources/image/parallax-service' + (k + 1) +'.jpg'
 			});
 			clearList.push('#' + v);
 		});

@@ -39,7 +39,7 @@ nav h3 {
 	font-weight: 300;
 }
 
-nav a[data-href] {
+nav a[data-href]:not([data-href=".main-section"]) {
 	display: block;
 	padding-left: 20px;
 	color: #aaa;
@@ -69,12 +69,12 @@ section {
 }
 
 footer .highlight {
-	padding: 20px 0;
+	padding: 20px 10px;
 	background: #009688;
 }
 
 footer .darken {
-	padding: 10px 0;
+	padding: 10px 10px;
 	background: #00897b;
 }
 
@@ -123,6 +123,11 @@ footer .content-container {
 	font-size: 4rem;
 }
 
+.enlarged-section {
+	padding-top: 100px !imporant;
+	padding-bottom: 100px !important;
+}
+
 .content-section {
 	background: #222;
 	padding: 10px;
@@ -134,7 +139,7 @@ footer .content-container {
 	height: 100px;
 }
 
-.content-header h1 {
+.content-header h1, .content-header h3 {
 	display: table-cell;
 	vertical-align: middle;
 	color: #f1f1f1;
@@ -169,7 +174,7 @@ footer .content-container {
 
 .no-background {
 	background: initial;
-	background-color: transparent;
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 .sh {
@@ -267,6 +272,85 @@ footer .content-container {
 	will-change: transform, top, right, background;
 }
 
+.row {
+	font-size: 0;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.service-card {
+	font-size: initial;
+	background: #fff;
+	display: inline-block;
+	padding: 10px;
+	position: relative;
+	margin: 10px;
+	margin-bottom: 50px;
+	flex-basis: calc(33.3333333% - 40px);
+}
+
+.service-card>p {
+	color: #505050;
+}
+
+.service-card-header {
+
+}
+
+.service-card-image {
+	text-align: center;
+	border-bottom: 2px solid #929292;
+	margin: 30px 0 50px;
+	width: 100%;
+	position: relative;
+}
+
+.service-card-image>i {
+	display: inline-block;
+	vertical-align: super;
+	text-align: center;
+	font-size: 50px;
+	color: #f1f1f1;
+}
+
+.service-card-image>* {
+	background: #303030;
+	border: 10px solid #303030;
+	border-radius: 50%;
+	position: absolute;
+	top: -30px;
+	left: 50%;
+	margin-left: -30px;
+	width: 50px;
+	height: 50px;
+}
+
+.service-card-link {
+	position: absolute;
+	bottom: -20px;
+}
+
+.service-card-link>a {
+	color: #222;
+	background: #e0e1e2;
+	border-radius: 20em;
+	display: block;
+	padding: 10px;
+	width: 100px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.service-card-link>a:hover {
+	background: #cacbcd;
+}
+
+@media (max-width: 1024px) {
+	.service-card {
+		flex-basis: calc(50% - 40px);
+	}
+}
+
 @media (max-width: 768px) {
 	aside {
 		left: -20vw;
@@ -275,5 +359,9 @@ footer .content-container {
 	main {
 		left: 0;
 		width: 100vw;
+	}
+
+	.service-card {
+		flex-basis: calc(100% - 40px);
 	}
 }
