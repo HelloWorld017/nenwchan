@@ -17,7 +17,6 @@
   "dependencies": {
     "NanumBarunGothic": "^1.0.0",
     "font-d2coding": "Joungkyun/font-d2coding",
-    "semantic": "^2.2.4",
     "jquery": "^3.1.1",
     "mdi": "^1.7.22",
     "parallax.js": "^1.4.2"
