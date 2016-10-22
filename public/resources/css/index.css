@@ -9,18 +9,21 @@ a {
 aside {
 	background: #333;
 	position: fixed;
-	width: 20vw;
+	width: 300px;
 	height: 100vh;
 	top: 0;
 	left: 0;
+	will-change: left;
+	z-index: 10;
 }
 
 aside>a>h1 {
 	color: #f1f1f1;
 	width: 100%;
-	padding: 25px 0;
+	padding: 10px 0;
+	padding-left: 20px;
 	margin: 0;
-	text-align: center;
+	text-align: left;
 }
 
 aside>a>h1:hover {
@@ -56,12 +59,12 @@ nav h3:hover {
 
 main {
 	position: fixed;
-	width: 80vw;
 	height: 100vh;
 	top: 0;
-	left: 20vw;
+	left: 300px;
 	right: 0;
 	overflow: auto;
+	will-change: left;
 }
 
 section {
@@ -112,6 +115,45 @@ footer .content-container {
 .header-title, .header-desc {
 	color: #f1f1f1;
 	text-align: center;
+}
+
+.menu-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: transparent;
+	transition: background-color 500ms;
+	will-change: display, background-color;
+	z-index: -10;
+}
+
+.menu-viewer {
+	display: none;
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	color: rgba(255, 255, 255, 0.7);
+	padding: 5px;
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	border-radius: 5px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: color 300ms;
+	will-change: color;
+	z-index: 9;
+}
+
+.menu-viewer:hover {
+	color: #f1f1f1;
+}
+
+.title-logo {
+	width: 40px;
+	height: 40px;
+	vertical-align: middle;
+	margin-right: 10px;
 }
 
 .section-scroll {
@@ -276,6 +318,7 @@ footer .content-container {
 	font-size: 0;
 	display: flex;
 	flex-flow: row wrap;
+	padding: 50px;
 }
 
 .service-card {
@@ -307,7 +350,7 @@ footer .content-container {
 
 .service-card-image>i {
 	display: inline-block;
-	vertical-align: super;
+	line-height: 50px;
 	text-align: center;
 	font-size: 50px;
 	color: #f1f1f1;
@@ -346,22 +389,26 @@ footer .content-container {
 }
 
 @media (max-width: 1024px) {
-	.service-card {
-		flex-basis: calc(50% - 40px);
-	}
-}
-
-@media (max-width: 768px) {
 	aside {
-		left: -20vw;
+		left: -300px;
+		transition: left 300ms;
 	}
 
 	main {
 		left: 0;
-		width: 100vw;
 	}
 
 	.service-card {
+		flex-basis: calc(50% - 40px);
+	}
+
+	.menu-viewer {
+		display: initial;
+	}
+}
+
+.service-card {
+@media (max-width: 768px) {
 		flex-basis: calc(100% - 40px);
 	}
 }

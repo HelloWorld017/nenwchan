@@ -1,6 +1,32 @@
 (function(){
 	var clearList = [];
 	var main = $('main');
+	var aside = $('aside');
+	var asideOpened = false;
+	var background = $('.menu-background');
+	var toggle = function(e){
+		if(!asideOpened){
+			aside.css({
+				left: '0'
+			});
+
+			background.css({
+				'z-index': '3',
+				'background-color': 'rgba(0, 0, 0, 0.7)'
+			});
+		}else{
+			aside.css({
+				left: '-300px'
+			});
+
+			background.css({
+				'z-index': '-10',
+				'background-color': 'rgba(0, 0, 0, 0)'
+			});
+		}
+		asideOpened = !asideOpened;
+	};
+
 	$(document).ready(function(){
 		$('.main-section').parallax({
 			imageSrc: './resources/image/parallax.jpg',
@@ -28,6 +54,9 @@
 			}, 300);
 			return false;
 		});
+
+		$('.menu-viewer').click(toggle);
+		background.click(toggle);
 
 		$('.section-scroll').click(function(e){
 			main.animate({
