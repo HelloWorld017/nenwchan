@@ -191,7 +191,7 @@ footer .content-container {
 	padding: 0;
 }
 
-.content-section:nth-child(2):not(.no-background)>.content-header {
+.content-section:nth-child(3):not(.no-background)>.content-header {
 	background: url(/resources/image/tripattern.png);
 	background-size-x: 160px;
 	background-size-y: 100px;
