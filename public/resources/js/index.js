@@ -28,8 +28,23 @@
 	};
 
 	$(document).ready(function(){
+		var date = new Date();
+		var dateFromZero = date.getMonth() * 30 + date.getDate();
+		var imageSrc = "./resources/image/parallax.jpg";
+
+		if(dateFromZero >= 10 * 30 + 25 || dateFromZero <= 25){
+			imageSrc = imageSrc.replace('.jpg', '-christmas.jpg');
+			var a = document.createElement('a');
+			a.innerText = "クリスマス by ピスケ";
+			a.target = "_blank";
+			a.href = "https://pixiv.net/i/15447116";
+			a.setAttribute('data-turbolinks', 'false');
+			a.setAttribute('class', 'copyright');
+			$('.main-header').append(a);
+		}
+
 		$('.main-section').parallax({
-			imageSrc: './resources/image/parallax.jpg',
+			imageSrc: imageSrc,
 			naturalWidth: 3840,
 			naturalHeight: 2400,
 			speed: 0.1

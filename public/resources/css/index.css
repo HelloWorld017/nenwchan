@@ -90,6 +90,34 @@ footer .content-container {
 	 color: #f1f1f1;
 }
 
+.copyright {
+	position: absolute;
+	bottom: 3rem;
+	right: 3rem;
+	z-index: 999;
+}
+
+.bs-row {
+	box-sizing: border-box;
+}
+
+.bs-col-xs-8, .bs-col-xs-1 {
+	float: left;
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	box-sizing: border-box;
+}
+
+.bs-col-xs-8 {
+	width: 66.66666667%;
+}
+
+.bs-col-xs-1 {
+	width: 8.33333333%;
+}
+
 .main-section {
 	height: 100vh;
 }
@@ -407,8 +435,8 @@ footer .content-container {
 	}
 }
 
-.service-card {
 @media (max-width: 768px) {
+	.service-card {
 		flex-basis: calc(100% - 40px);
 	}
 }

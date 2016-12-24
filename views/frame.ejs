@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<%
+	const date = new Date;
+	const dateFromZero = date.getMonth() * 30 + date.getDate();
+
+	const CHRISTMAS_MODE = dateFromZero >= 10 * 30 + 25 || dateFromZero <= 25;
+%>
 <html lang="ko">
 	<head prefix="og: http://ogp.me/ns#">
 		<title>キネヌのページ</title>
@@ -44,9 +50,86 @@
 		<script src="/parallax.js/parallax.min.js"></script>
 		<script src="/resources/js/turbolinks.min.js"></script>
 		<script src="/resources/js/pjax.js"></script>
+
+		<!-- BGM nenw embed integration -->
+		<!-- Turbolinks refreshes the iframe tags -->
+		<% if(CHRISTMAS_MODE){ %>
+			<link rel="stylesheet" type="text/css" href="https://bgm.khinenw.tk/font-awesome/css/font-awesome.min.css">
+			<style>
+				body {
+					background: transparent;
+				}
+
+				.ba{
+					color: #00C0A0;
+				}
+
+				.ba:hover, .ba:active, .ba:focus, .ba:visited{
+					color: #16A085;
+				}
+
+				.contents{
+					background: #222f3d;
+					border: solid 3px #222f3d;
+					border-radius: 5px;
+					font-family: 'Nanum Barun Gothic', sans-serif;
+				}
+
+				.row{
+					margin: 0;
+				}
+
+				#title-contents{
+					overflow: hidden;
+					white-space: nowrap;
+				}
+
+				#song-contents{
+					color: #00C0A0;
+					margin-left: 10px;
+				}
+			</style>
+
+			<script src="/resources/js/embed.js"></script>
+			<script src="/resources/js/snowy.js"></script>
+		<% } %>
 	</head>
 
 	<body>
 		<%- include(name) %>
+		<% if(CHRISTMAS_MODE){ %>
+			<canvas id="playground" style="position: fixed; top: 0; left: 0-; width: 100%; height: 100%; pointer-events: none" width="1440" height="809">
+				<p>
+				눈오는 풍경을 못보시겠네요. 불쌍ㅠ
+				</p>
+			</canvas>
+
+			<div class="contents" id="bgm" data-turbolinks-permanent>
+				<div class="bs-row">
+					<div id="title-contents" class="bs-col-xs-8">
+						<span id="song-contents">
+						</span>
+					</div>
+
+					<div class="bs-col-xs-1">
+						<a class="ba" id="prev" href="javascript:prevTrack()">
+							<span class="fa fa-chevron-left"></span>
+						</a>
+					</div>
+
+					<div class="bs-col-xs-1">
+						<a class="ba" id="playpause" href="javascript:play()">
+							<span class="fa fa-play-circle-o"></span>
+						</a>
+					</div>
+
+					<div class="bs-col-xs-1">
+						<a class="ba" id="next" href="javascript:nextTrack()">
+							<span class="fa fa-chevron-right"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		<% } %>
 	</body>
 </html>
