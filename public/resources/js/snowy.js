@@ -1,5 +1,5 @@
 "use strict";
-document.addEventListener('load', function(){
+window.addEventListener('load', function(){
 	var canvas = document.getElementById("playground");
 	var ctx = canvas.getContext("2d");
 
